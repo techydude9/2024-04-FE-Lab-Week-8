@@ -3,6 +3,9 @@
    Author:  Promineo Tech Academic Team
    Subject:  Object Oriented Programming (OOP) Lab
    FE JS5 Lab
+
+   Lab 8 Solution by Bob Ruzga April 2024 FE Cohort
+   June 20, 2024 lab date
 */
 
 /* ----------------------------------------------------- */
@@ -256,7 +259,19 @@ class Parent {
  * HINT: You should be using vital key terms like extends and super
  *
  * ↓ YOUR CODE HERE ↓ */
-console.log('---- Question 6 - Answer: -----');
+
+console.log('   ---- Question 6 - Answer: -----');
+    // Step 1
+  class Child extends Parent {
+    constructor(name, age){
+      super(name, age);
+    }
+  }
+
+  let child = new Child('Pugsley', 10);   // Step 2
+  child.details();  // Step 3
+
+  console.log('\n');  // for answer readability
 
 /*-------------------------------------------------------*/
 // Question 7: Put it all together
@@ -276,5 +291,50 @@ Question 7: Put it all together \n`)
  * Step 10: Display the movies information to the console, using the new instance list
  *
  * ↓ YOUR CODE HERE ↓ */
-console.log('---- Question 7 - Answer: -----');
+console.log('   ---- Question 7 - Answer: -----');
+
+class Movie {             // step 1    
+  constructor(title, director) {
+    this.title = title;
+    this.director = director;
+  }
+
+  describe(){       // step 2
+    return `The movie ${this.title} was directed by ${this.director}.`
+  }
+}
+
+class List {        // Step 3
+  constructor(movies){
+    this.movies =[];
+  }
+
+  addMovie(movie){     // Step 4
+    this.movies.push(movie);
+  }
+
+  displayMovies(){     // Step 5
+    let listOfMovies = " ";
+    for (let x = 0; x < this.movies.length; x++){
+       listOfMovies += `${this.movies[x].title}, directed by ${this.movies[x].director}. \n `
+    }
+    return listOfMovies;
+  }
+}
+  let movie1 = new Movie("Jurassic Park", "Steven Spielberg");            // Step 6
+  let movie2 = new Movie("How the Grinch stole Christmas", "Ron Howard");
+
+  console.log(movie1.describe());   // Step 7
+  console.log(movie2.describe());   // Step 8
+
+  let list = new List;              // Step 9
+      list.addMovie(movie1);
+      list.addMovie(movie2);     
+
+  //    console.log(list);    for debugging
+
+  console.log(list.displayMovies());    // Step 10
+
+
+console.log('\n' + "All Questions Solved!!!! Yeah!");
 console.log(`-----------Finished------------`)
