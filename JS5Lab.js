@@ -41,7 +41,7 @@ Question 1: Object Values \n`)
 
 // Provided code:
 let person = {
-  firstname: 'Niel',
+  firstname: 'Neil',    // bjr - corrected misspelled first name (orig Niel)
   lastname: 'Armstrong',
   year: 1969,
   occupation: 'astronaut',
@@ -57,6 +57,11 @@ console.log(
  *
  * ↓ YOUR CODE HERE ↓ */
 // "On July 20th 1969, Niel Armstrong was the first person to set foot on the Earth's moon."
+  console.log('   ---- Question 1 - Answer: -----');
+
+  console.log(`On July 20th ${person.year}, ${person.firstname} ${person.lastname} was the first person to set foot on the Earth's moon.
+    `);    //purposely placed this on a new line for question/ answer spacing
+
 
 /*-------------------------------------------------------*/
 // Question 2: Instance of a Class
@@ -85,6 +90,12 @@ greeting.hello()
  * Step 3: A greeting should print to the console
  *
  * ↓ YOUR CODE HERE ↓ */
+console.log('   ---- Question 2 - Answer: -----');
+
+  let myGreeting = new Greeting('Bob Ruzga', 'Alva, FL') //step 1
+  myGreeting.hello();  //steps 2 n 3
+  console.log('\n');
+
 
 /*-------------------------------------------------------*/
 // Question 3: myBook
@@ -114,6 +125,17 @@ class Book {
  * Step 7: Invoke the describe method for the yourBook instance. Make it print to the console also.
  *
  * ↓ YOUR CODE HERE ↓ */
+console.log('   ---- Question 3 - Answer: -----');
+
+  let myBook = new Book('Pride and Prejudice', 'Jane Austen');   //steps 1 & 2
+  console.log(`Title of my book is ${myBook.title}`);  // Step 3
+  console.log(`Author of my book is ${myBook.author}`);   //step 4
+
+  console.log(myBook.describe()); //Step 5
+
+  let yourBook = new Book('Sum of All Fears', 'Tom Clancey');  //step 6
+  console.log(yourBook.describe());  //Step 7
+  console.log('\n');  // added to make reading easier in console
 
 /*-------------------------------------------------------*/
 // Question 4: Create a Class
@@ -129,7 +151,33 @@ Question 4: Create a Class \n`)
  *
  *
  * ↓ YOUR CODE HERE ↓ */
+console.log('   ---- Question 4 - Answer: -----');
 
+// step 1
+  class Fruit {
+    constructor(name, color, taste){
+      this.name = name
+      this.color = color
+      this.taste = taste
+    }
+
+  // step 2
+    description() {
+      console.log(`A ${this.name} has a ${this.color} color and tastes ${this.taste}`)
+    }
+  }
+
+  //step 3
+  let fruit1 = new Fruit('lime', 'green', 'sour');
+
+  //step 4
+  let fruit2 = new Fruit('banana', 'yellow', 'sweet');
+
+  //step 5
+  fruit1.description();
+  fruit2.description();
+
+  console.log('\n');
 /*-------------------------------------------------------*/
 // Question 5: Inheritance and Polymorphism
 console.log(`--------------------------
@@ -173,6 +221,15 @@ class Teacher extends Person {
  * Step 4: Call the introduction method on your new teacher instance AND the details method, make sure that the results are printed to the console.
  *
  * ↓ YOUR CODE HERE ↓ */
+console.log('   ---- Question 5 - Answer: -----');
+  let student = new Student('Jacky', 'student');   //step 1
+  let teacher = new Teacher('Mr. Bean', 'teacher'); //step 2
+
+  console.log(student.introduction() + "\n" + student.details());  //step 3
+  console.log(teacher.introduction() + "\n" + teacher.details());  //step 4
+
+  console.log('\n');   //console readability
+
 
 /*-------------------------------------------------------*/
 // Question 6: Inheritance
@@ -199,6 +256,7 @@ class Parent {
  * HINT: You should be using vital key terms like extends and super
  *
  * ↓ YOUR CODE HERE ↓ */
+console.log('---- Question 6 - Answer: -----');
 
 /*-------------------------------------------------------*/
 // Question 7: Put it all together
@@ -218,5 +276,5 @@ Question 7: Put it all together \n`)
  * Step 10: Display the movies information to the console, using the new instance list
  *
  * ↓ YOUR CODE HERE ↓ */
-
+console.log('---- Question 7 - Answer: -----');
 console.log(`-----------Finished------------`)
